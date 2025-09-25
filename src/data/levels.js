@@ -1,0 +1,91 @@
+export const levels = [
+  {
+    id: 1,
+    name: 'The Village of Data',
+    description: 'Learn Python basics, NumPy, Pandas.',
+    quests: [
+      { type: 'concept', question: 'What does pandas stand for?', answer: 'panel data', xp: 20 },
+      { type: 'code', question: 'Write code to create a NumPy array: np.array([1,2,3])', answer: 'np.array([1,2,3])', xp: 50 },
+    ],
+    boss: { question: 'Clean this messy dataset: Remove duplicates from [1,2,2,3]', answer: '[1,2,3]', xp: 100 },
+    reward: 'Data Cleaning Staff',
+  },
+  {
+    id: 2,
+    name: 'The Forest of Statistics',
+    description: 'Probability, Bayes.',
+    quests: [
+      { type: 'concept', question: 'What is P(A|B)?', answer: 'bayes', xp: 20 },
+      { type: 'riddle', question: 'If P(A)=0.5, P(B|A)=0.8, P(B|not A)=0.3, what is P(A|B)? (Simplified)', answer: '0.727', xp: 50 },
+    ],
+    boss: { question: 'Solve this probability riddle: Coin flip heads twice?', answer: '0.25', xp: 100 },
+    reward: 'Shield of Probability',
+  },
+  // Add remaining levels similarly
+  {
+    id: 3,
+    name: 'The Linear Castle',
+    description: 'Linear algebra.',
+    quests: [],
+    boss: { question: 'Transform image with matrix: [[1,0],[0,1]] (identity)', answer: 'identity', xp: 100 },
+    reward: 'Matrix Blade',
+  },
+  {
+    id: 4,
+    name: 'The Village of Models',
+    description: 'Regression.',
+    quests: [],
+    boss: { question: 'Predict house price with linear regression (simulated)', answer: 'y=mx+c', xp: 100 },
+    reward: 'Regression Dragon Pet 🐉',
+  },
+  {
+    id: 5,
+    name: 'The Cave of Classification',
+    description: 'Logistic regression, decision trees.',
+    quests: [],
+    boss: { question: 'Classify mushroom: Edible if no odor?', answer: 'edible', xp: 100 },
+    reward: 'Classifier Amulet',
+  },
+  {
+    id: 6,
+    name: 'The Deep Forest',
+    description: 'Neural networks.',
+    quests: [],
+    boss: { question: 'Train feedforward NN (simulated)', answer: 'backprop', xp: 100 },
+    reward: 'Neural Crown',
+  },
+  {
+    id: 7,
+    name: 'The Mountain of Vision',
+    description: 'CNNs.',
+    quests: [],
+    boss: { question: 'Cat vs Dog classifier', answer: 'cnn', xp: 100 },
+    reward: 'Vision Bow',
+  },
+  {
+    id: 8,
+    name: 'The Library of Language',
+    description: 'Transformers & LLMs.',
+    quests: [],
+    boss: { question: 'Build a chatbot (simulated response)', answer: 'hello', xp: 100 },
+    reward: 'Linguist’s Lute',
+  },
+  {
+    id: 9,
+    name: 'The Arena of Reinforcement',
+    description: 'Q-learning.',
+    quests: [],
+    boss: { question: 'Maze-solving agent', answer: 'q-table', xp: 100 },
+    reward: 'Reinforcement Gauntlet',
+  },
+  {
+    id: 10,
+    name: 'The Tower of Generative AI',
+    description: 'GANs & diffusion.',
+    quests: [],
+    boss: { question: 'Generate image/text (simulated)', answer: 'gan', xp: 100 },
+    reward: 'Crown of Intelligence 👑',
+  },
+];
+
+export const XP_PER_LEVEL = 200;
