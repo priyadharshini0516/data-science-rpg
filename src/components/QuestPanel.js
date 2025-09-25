@@ -11,7 +11,7 @@ const QuestPanel = ({ levelData, onCompleteQuest, onCompleteBoss }) => {
     const currentQuest = isBoss ? levelData.boss : levelData.quests[questIndex];
     if (answer.toLowerCase().includes(currentQuest.answer.toLowerCase())) {
       if (isBoss) {
-        onCompleteBoss(currentQuest.xp);
+        onCompleteBoss(currentQuest.xp, levelData.reward);
         setIsBoss(false);
       } else {
         onCompleteQuest(currentQuest.xp);
@@ -21,9 +21,9 @@ const QuestPanel = ({ levelData, onCompleteQuest, onCompleteBoss }) => {
           setIsBoss(true);
         }
       }
-      alert('Correct! Quest complete.');
+      alert('🎉 Correct! Quest complete!');
     } else {
-      alert('Wrong! Try again.');
+      alert('❌ Wrong! Try again.');
     }
     setAnswer('');
   };
@@ -31,17 +31,25 @@ const QuestPanel = ({ levelData, onCompleteQuest, onCompleteBoss }) => {
   const current = isBoss ? levelData.boss : levelData.quests[questIndex];
 
   return (
-    <div className="quest-panel">
-      <h2>Current Quest in {levelData.name}</h2>
-      <p>{levelData.description}</p>
-      <p>{isBoss ? 'Boss Fight: ' : 'Quest: '}{current.question}</p>
-      <input 
-        type="text" 
-        value={answer} 
-        onChange={(e) => setAnswer(e.target.value)} 
-        placeholder="Your answer" 
-      />
-      <button onClick={handleSubmit}>Submit</button>
+    <div className="p-6 bg-amber-100 rounded-lg shadow-lg border-2 border-amber-900">
+      <h2 className="text-xl font-bold text-amber-900 mb-2">📜 Quest in {levelData.name}</h2>
+      <p className="text-amber-800 mb-4">{levelData.description}</p>
+      <p className="font-semibold mb-2">{isBoss ? '⚔️ Boss Fight: ' : '📝 Quest: '}{current.question}</p>
+      <div className="flex items-center">
+        <input
+          type="text"
+          value={answer}
+          onChange={(e) => setAnswer(e.target.value)}
+          placeholder="Your answer"
+          className="p-2 border border-amber-900 rounded-lg mr-2 w-full focus:outline-none focus:ring-2 focus:ring-amber-500"
+        />
+        <button
+          onClick={handleSubmit}
+          className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+        >
+          Submit
+        </button>
+      </div>
     </div>
   );
 };
